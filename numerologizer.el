@@ -66,7 +66,7 @@ Follows the Pythagorean, not Chaldean, correspondences."
   "Print the numerological value of prompted STRING."
   (interactive "sString to find the numerological value of: ")
   (let ((value ""))
-    (setf value (jpr-numerologizer string))
+    (setf value (numerologizer string))
     (message "The numerological value of %s is %s" string value)))
 (provide 'numerologizer)
 
