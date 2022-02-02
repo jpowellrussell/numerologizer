@@ -13,7 +13,7 @@ I use the following [use-package](https://github.com/jwiegley/use-package) setup
 (use-package numerologizer
   :straight (numerologizer :type git :host github :repo "jpowellrussell/numerologizer"
             :fork (:host github
-                         :repo "jpowellrussell/numerologizer"))
+                         :repo "YOUR-NAME/numerologizer"))
   :demand t)
 ```
 
