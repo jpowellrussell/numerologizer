@@ -9,6 +9,8 @@
 ;; -----------------------------------------------------------------------------
 
 ;;; Code:
+(require 'cl)
+
 (defun numerologizer-number-to-list (number)
   "Turn a multi-digit NUMBER into a list of its digits."
   (map 'list (lambda (c)(or (cl-digit-char-p c) '-)) (prin1-to-string number)))
@@ -42,6 +44,7 @@ Follows the Pythagorean, not Chaldean, correspondences."
         (num-list (list 0))
         (sum 0)
         (numerology-hash (numerologizer-build-hash)))
+    ;; for some reason, any use of numerologizer is throwing an error until I evaluate this buffer directly, with the message "Symbol's value as variable is void: for", which I assume has something to do with the common lisp package not being loaded yet? Maybe I need to require cl?
     (cl-loop for c across string do
              (progn
                (setf c-number (gethash (char-to-string c) numerology-hash 0))
